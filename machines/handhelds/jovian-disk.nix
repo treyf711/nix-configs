@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/disk/nvme0n1";
+        device = "/dev/nvme0n1";
         type = "disk";
         content = {
           type = "gpt";
@@ -10,6 +10,7 @@
             ESP = {
               type = "EF00";
               size = "1024M";
+              priority = 1;
               content = {
                 type = "filesystem";
                 format = "vfat";
@@ -19,6 +20,7 @@
             };
             root = {
               size = "100%";
+              priority = 2;
               content = {
                 type = "filesystem";
                 format = "ext4";
