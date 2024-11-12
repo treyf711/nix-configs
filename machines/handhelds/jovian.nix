@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       inputs.disko.nixosModules.disko
       inputs.jovian.nixosModules.jovian
-      ./jovian-hardware.nix
+      ./jovian-disk.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
