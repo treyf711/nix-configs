@@ -16,7 +16,10 @@
     nixosConfigurations.jovian = nixpkgs-unstable.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
-      modules = [ ./machines/handhelds/jovian.nix ];
+      modules = [ 
+                  ./machines/handhelds/jovian.nix
+                  ./machines/handhelds/jovian-hardware.nix 
+                ];
     };
   };
 }
