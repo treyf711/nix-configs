@@ -15,6 +15,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # ZFS nonsense
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.forceImportRoot = false;
+  networking.hostId = "8ae4dcfe";
+
   networking.hostName = "knowhere"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -53,6 +58,8 @@
     };
   };
   services.desktopManager.plasma6.enable = true;
+
+  services.tailscale.enable = true;
 
   nix.settings.trusted-users=["nixremote"];
   security.sudo.extraConfig =

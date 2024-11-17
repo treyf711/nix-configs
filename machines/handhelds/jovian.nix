@@ -73,6 +73,10 @@
     pulse.enable = true;
   };
 
+  services.flatpak.enable = true;
+
+  xdg.portal.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
@@ -85,6 +89,7 @@
       neovim
       tree
     ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPaEXd17BgV62OBE+M6gSe85n7tH/NG0yBzDGHwSKpV4 treyfordham@knowhere" ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -95,6 +100,8 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
   ];
+
+  services.sshd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
