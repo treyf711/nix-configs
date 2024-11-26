@@ -18,6 +18,7 @@
   # ZFS nonsense
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = false;
+  boot.zfs.extraPools = [ "storage" ];
   networking.hostId = "8ae4dcfe";
 
   networking.hostName = "knowhere"; # Define your hostname.
@@ -85,6 +86,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
+  users.groups.media = { };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.treyfordham = {
     initialPassword = "pleaseChangeMe";
@@ -100,6 +103,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    go-chromecast
     ungoogled-chromium
     tmux
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
